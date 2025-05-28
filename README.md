@@ -6,7 +6,7 @@
 
 Clean Build automatically gets rid of unessecary debug files that are automatically generated during your Unity Build.
 
-### Examples of files that will be automatically removed are:
+### Examples of files that will be automatically removed include:
 - Burst Compiler Reports
 - IL2CPP Build Files
 - Program Debug Files (PDBs) which often get automatically generated due to Managed Stripping
