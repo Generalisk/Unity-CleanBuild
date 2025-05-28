@@ -1,0 +1,20 @@
+{
+  "name": "com.generalisk.editor.clean-build",
+  "version": "1.0.0",
+  "displayName": "Clean Build",
+  "description": "Quickly be rid of those pesky debug files and folders with this simple Unity Package.\n\nClean Build automatically gets rid of unessecary.\n\nExamples of files that will be automatically removed are:\n- Burst Compiler Reports\n- IL2CPP Build Files\n- Program Debug Files (PDBs) which often get automatically generated from Managed Stripping",
+  "unity": "2018.1",
+  "author": {
+    "name": "Generalisk",
+    "email": "contact@generalisk.com",
+    "url": "https://generalisk.com"
+  },
+  "license": "MIT",
+  "licensesUrl": "https://github.com/Generalisk/Unity-CleanBuild/LICENSE",
+  "changelogUrl": "https://github.com/Generalisk/Unity-CleanBuild/releases",
+  "keywords": [
+    "editor",
+    "build",
+    "clean"
+  ]
+}
