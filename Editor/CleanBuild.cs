@@ -2,6 +2,7 @@ using System.IO;
 using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
+using UnityEngine;
 
 namespace Generalisk.CleanBuild.Editor
 {
@@ -11,7 +12,7 @@ namespace Generalisk.CleanBuild.Editor
 
         public void OnPostprocessBuild(BuildReport report)
         {
-            // TODO: Only run if Build is not A Development Build
+            if (!Debug.isDebugBuild) { return; } // Skip if Development Build
 
             EditorUtility.DisplayProgressBar("Hold on...", "Cleaning up...", 0);
 
