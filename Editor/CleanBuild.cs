@@ -14,7 +14,7 @@ namespace Generalisk.CleanBuild.Editor
         {
             if (EditorUserBuildSettings.development) { return; } // Skip if Development Build
 
-            EditorUtility.DisplayProgressBar("Hold on...", "Cleaning up...", 0);
+            EditorUtility.DisplayProgressBar("Hold on", "Cleaning up", 0);
 
             string path = new DirectoryInfo(report.summary.outputPath).Parent.FullName;
             
