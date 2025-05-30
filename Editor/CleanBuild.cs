@@ -12,7 +12,7 @@ namespace Generalisk.CleanBuild.Editor
 
         public void OnPostprocessBuild(BuildReport report)
         {
-            if (!Debug.isDebugBuild) { return; } // Skip if Development Build
+            if (EditorUserBuildSettings.development) { return; } // Skip if Development Build
 
             EditorUtility.DisplayProgressBar("Hold on...", "Cleaning up...", 0);
 
