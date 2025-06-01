@@ -33,7 +33,7 @@ namespace Generalisk.CleanBuild.Editor
             }
 
             // Remove Debug files (.pdb)
-            EditorUtility.DisplayProgressBar("Cleaning up", ".pdb files", 0.5f);
+            EditorUtility.DisplayProgressBar("Cleaning up", ".pdb files", 0.334f);
 
             string[] files = Directory.GetFiles(path, "*", SearchOption.AllDirectories);
             foreach (string file in files)
@@ -43,6 +43,8 @@ namespace Generalisk.CleanBuild.Editor
             }
 
             // Remove D3D12 Folder (if graphics api is not included in project)
+            EditorUtility.DisplayProgressBar("Cleaning up", ".pdb files", 0.667f);
+
             if (!PlayerSettings.GetGraphicsAPIs(target).Contains(GraphicsDeviceType.Direct3D12))
             {
                 if (Directory.Exists(path + "/D3D12"))
