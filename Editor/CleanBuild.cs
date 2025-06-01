@@ -1,7 +1,9 @@
 using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
+using UnityEngine.Rendering;
 
 namespace Generalisk.CleanBuild.Editor
 {
@@ -14,10 +16,12 @@ namespace Generalisk.CleanBuild.Editor
             // Skip if Development Build
             if (EditorUserBuildSettings.development) { return; }
 
+            // Setup Variables
+            string path = new DirectoryInfo(report.summary.outputPath).Parent.FullName;
+            BuildTarget target = EditorUserBuildSettings.activeBuildTarget;
+
             // Remove Do not Ship folders
             EditorUtility.DisplayProgressBar("Cleaning up", "\"Do not Ship\" folders", 0);
-
-            string path = new DirectoryInfo(report.summary.outputPath).Parent.FullName;
             
             string[] dirs = Directory.GetDirectories(path, "*", SearchOption.AllDirectories);
             foreach (string dir in dirs)
@@ -36,6 +40,13 @@ namespace Generalisk.CleanBuild.Editor
             {
                 if (file.ToLower().EndsWith(".pdb"))
                 { File.Delete(file); }
+            }
+
+            // Remove D3D12 Folder (if graphics api is not included in project)
+            if (!PlayerSettings.GetGraphicsAPIs(target).Contains(GraphicsDeviceType.Direct3D12))
+            {
+                if (Directory.Exists(path + "/D3D12"))
+                { Directory.Delete(path + "/D3D12", true); }
             }
 
             EditorUtility.ClearProgressBar();
