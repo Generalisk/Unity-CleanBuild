@@ -43,7 +43,7 @@ namespace Generalisk.CleanBuild.Editor
             }
 
             // Remove D3D12 Folder (if graphics api is not included in project)
-            EditorUtility.DisplayProgressBar("Cleaning up", ".pdb files", 0.667f);
+            EditorUtility.DisplayProgressBar("Cleaning up", "Direct3D12 Binaries", 0.667f);
 
             if (!PlayerSettings.GetGraphicsAPIs(target).Contains(GraphicsDeviceType.Direct3D12))
             {
