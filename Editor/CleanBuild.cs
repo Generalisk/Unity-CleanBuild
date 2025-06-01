@@ -2,7 +2,6 @@ using System.IO;
 using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
-using UnityEngine;
 
 namespace Generalisk.CleanBuild.Editor
 {
@@ -12,9 +11,11 @@ namespace Generalisk.CleanBuild.Editor
 
         public void OnPostprocessBuild(BuildReport report)
         {
-            if (EditorUserBuildSettings.development) { return; } // Skip if Development Build
+            // Skip if Development Build
+            if (EditorUserBuildSettings.development) { return; }
 
-            EditorUtility.DisplayProgressBar("Hold on", "Cleaning up", 0);
+            // Remove Do not Ship folders
+            EditorUtility.DisplayProgressBar("Cleaning up", "\"Do not Ship\" folders", 0);
 
             string path = new DirectoryInfo(report.summary.outputPath).Parent.FullName;
             
@@ -26,6 +27,9 @@ namespace Generalisk.CleanBuild.Editor
                     || dir.ToLower().Contains("dontship"))
                 { Directory.Delete(dir, true); }
             }
+
+            // Remove Debug files (.pdb)
+            EditorUtility.DisplayProgressBar("Cleaning up", ".pdb files", 0.5f);
 
             string[] files = Directory.GetFiles(path, "*", SearchOption.AllDirectories);
             foreach (string file in files)
