@@ -1,6 +1,6 @@
 {
     "name": "Generalisk.CleanBuild.Editor",
-    "rootNamespace": "",
+    "rootNamespace": "Generalisk.CleanBuild.Editor",
     "references": [],
     "includePlatforms": [
         "Editor"
