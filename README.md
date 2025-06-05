@@ -13,4 +13,4 @@ Clean Build automatically gets rid of unessecary debug files that are automatica
 - Direct3D12 Binaries (if Graphics API is not included in the project)
 
 ## How to Install
-In Unity, open the Package Manager and add go to "Install package from git URL..." and add in `https://github.com/Generalisk/Unity-QuickBuild.git`
+In Unity, open the Package Manager and add go to "Install package from git URL..." and add in `https://github.com/Generalisk/Unity-CleanBuild.git`
