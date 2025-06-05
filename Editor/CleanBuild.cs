@@ -45,10 +45,13 @@ namespace Generalisk.CleanBuild.Editor
             // Remove D3D12 Folder (if graphics api is not included in project)
             DisplayProgressBar("Direct3D12 Binaries", 0.667f);
 
-            if (!PlayerSettings.GetGraphicsAPIs(target).Contains(GraphicsDeviceType.Direct3D12))
+            if (report.summary.platformGroup == BuildTargetGroup.Standalone)
             {
-                if (Directory.Exists(path + "/D3D12"))
-                { Directory.Delete(path + "/D3D12", true); }
+                if (!PlayerSettings.GetGraphicsAPIs(target).Contains(GraphicsDeviceType.Direct3D12))
+                {
+                    if (Directory.Exists(path + "/D3D12"))
+                    { Directory.Delete(path + "/D3D12", true); }
+                }
             }
 
             EditorUtility.ClearProgressBar();
