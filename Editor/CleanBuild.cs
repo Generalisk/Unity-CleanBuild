@@ -21,7 +21,7 @@ namespace Generalisk.CleanBuild.Editor
             BuildTarget target = EditorUserBuildSettings.activeBuildTarget;
 
             // Remove Do not Ship folders
-            EditorUtility.DisplayProgressBar("Cleaning up", "\"Do not Ship\" folders", 0);
+            DisplayProgressBar("\"Do not Ship\" folders", 0);
             
             string[] dirs = Directory.GetDirectories(path, "*", SearchOption.AllDirectories);
             foreach (string dir in dirs)
@@ -33,7 +33,7 @@ namespace Generalisk.CleanBuild.Editor
             }
 
             // Remove Debug files (.pdb)
-            EditorUtility.DisplayProgressBar("Cleaning up", ".pdb files", 0.334f);
+            DisplayProgressBar(".pdb files", 0.334f);
 
             string[] files = Directory.GetFiles(path, "*", SearchOption.AllDirectories);
             foreach (string file in files)
@@ -43,7 +43,7 @@ namespace Generalisk.CleanBuild.Editor
             }
 
             // Remove D3D12 Folder (if graphics api is not included in project)
-            EditorUtility.DisplayProgressBar("Cleaning up", "Direct3D12 Binaries", 0.667f);
+            DisplayProgressBar("Direct3D12 Binaries", 0.667f);
 
             if (!PlayerSettings.GetGraphicsAPIs(target).Contains(GraphicsDeviceType.Direct3D12))
             {
@@ -53,5 +53,8 @@ namespace Generalisk.CleanBuild.Editor
 
             EditorUtility.ClearProgressBar();
         }
+
+        private void DisplayProgressBar(string text, float progress)
+        { EditorUtility.DisplayProgressBar("Cleaning up", text, progress); }
     }
 }
