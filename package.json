@@ -1,6 +1,6 @@
 {
   "name": "com.generalisk.editor.clean-build",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "displayName": "Clean Build",
   "description": "Quickly be rid of those pesky debug files and folders with this simple Unity Package!\n\nClean Build automatically gets rid of unessecary debug files that are automatically generated during your Unity Build.\n\nExamples of files that will be automatically removed include:\n- Burst Compiler Reports\n- IL2CPP Build Files\n- Program Debug Files (PDBs) which often get automatically generated due to Managed Stripping\n- Direct3D12 Binaries (if Graphics API is not included in the project)",
   "unity": "2018.1",
