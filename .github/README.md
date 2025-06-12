@@ -26,7 +26,7 @@
 
 <div align="center">
   
-  ### Quickly be rid of those pesky debug files and folders with this simple Unity Package!
+  ### Quickly be rid of those pesky unused & debug files and folders hogging up precious disk space with this Unity Package!
 </div>
 
 Clean Build automatically gets rid of unnecessary debug files that are automatically generated during your Unity Build.
