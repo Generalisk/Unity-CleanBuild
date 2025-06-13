@@ -82,7 +82,10 @@ namespace Generalisk.CleanBuild.Editor
 
                     KeyValuePair<string, string>[] modules = {
                         // Package ID, DLL Name
-                        // TODO: Impliment this list in A way that it will not cause crashes upon startup
+                        new KeyValuePair<string, string>("com.unity.modules.vr", "UnityEngine.VRModule"),
+                        new KeyValuePair<string, string>("com.unity.modules.xr", "UnityEngine.ARModule"),
+                        new KeyValuePair<string, string>("com.unity.modules.xr", "UnityEngine.XRModule"),
+                        // TODO: Finish implimentation of this list and make sure that the deleted DLL will not cause A crash
                     };
 
                     string managedDirectory = Application.productName + "_Data/Managed";
