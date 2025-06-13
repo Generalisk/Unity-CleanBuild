@@ -21,10 +21,11 @@ namespace Generalisk.CleanBuild.Editor
             if (EditorUserBuildSettings.development) { return; }
 
             // Setup Variables
-            string path = new DirectoryInfo(report.summary.outputPath).Parent.FullName;
+            string path = new DirectoryInfo(report.summary.outputPath).FullName;
+            if (File.Exists(path)) { path = new DirectoryInfo(path).Parent.FullName; }
+
             BuildTarget target = report.summary.platform;
             BuildTargetGroup targetGroup = report.summary.platformGroup;
-
             // Old method is deprecated since Unity 2021.2, replace with new method
 #if NEW_SCRIPTING_BACKEND_GET_IMPLIMENTATION
             NamedBuildTarget namedTarget = NamedBuildTarget.FromBuildTargetGroup(targetGroup);
