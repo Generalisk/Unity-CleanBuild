@@ -35,7 +35,8 @@ Clean Build automatically gets rid of unnecessary debug files that are automatic
 - Burst Compiler Reports
 - IL2CPP Build Files
 - Program Debug Files (PDBs) which often get automatically generated due to Managed Stripping
-- Direct3D12 Binaries (if Graphics API is not included in the project)
+- Direct3D12 Binaries (if Graphics API is not included in the project) (Windows only)
+- VR, XR & AR Module Binaries (if unused) (Mono Standalone only)
 
 # Contents
 - [Requirements](#requirements)
