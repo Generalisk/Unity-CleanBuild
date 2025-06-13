@@ -82,7 +82,7 @@ namespace Generalisk.CleanBuild.Editor
 
                     KeyValuePair<string, string>[] modules = {
                         // Package ID, DLL Name
-                        // TODO: Make sure that Clean Build is ran last
+                        // TODO: Impliment this list in A way that it will not cause crashes upon startup
                     };
 
                     string managedDirectory = Application.productName + "_Data/Managed";
