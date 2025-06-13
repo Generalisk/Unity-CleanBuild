@@ -13,7 +13,8 @@ namespace Generalisk.CleanBuild.Editor
 {
     internal class CleanBuild : IPostprocessBuildWithReport
     {
-        public int callbackOrder { get; set; }
+        // Make sure the clean build is ran last in the build
+        public int callbackOrder { get; set; } = int.MaxValue;
 
         public void OnPostprocessBuild(BuildReport report)
         {
